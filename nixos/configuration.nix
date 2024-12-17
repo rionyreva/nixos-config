@@ -11,6 +11,7 @@
       ./amdgpu.nix
       ./gnome.nix
       ./davinci-resolve.nix
+      ./kde-applications.nix
     ];
 
   # Bootloader.
@@ -102,15 +103,21 @@
   yt-dlp
   ffmpeg_6
 
+  rclone
+
+  pavucontrol
+
   librewolf
   brave
   tor-browser
   mullvad-browser
 
+  tutanota-desktop
+  electron-mail
+
   keepassxc
   yubioath-flutter
-  
-  rclone
+  # cryptomator # USE FLATPAK! # flatpak install flathub org.cryptomator.Cryptomator # Free client-side encryption for your cloud files
   
   bottles
 
@@ -119,6 +126,13 @@
   vlc
   mpv
   handbrake
+  
+  qpwgraph # Qt graph manager for PipeWire, similar to QjackCtl
+  
+  vesktop # Alternate client for Discord with Vencord built-in.
+  irssi # Terminal based IRC client
+  
+  pixelorama
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
