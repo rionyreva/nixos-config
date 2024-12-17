@@ -13,6 +13,7 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.rclone-manager
     gnomeExtensions.dash-to-panel
+    gnomeExtensions.dash-to-dock
     gnomeExtensions.blur-my-shell
     gnomeExtensions.appindicator
     gnomeExtensions.fly-pie
@@ -20,16 +21,16 @@
     gnomeExtensions.ddterm
     streamcontroller # Elegant Linux app for the Elgato Stream Deck with support for plugins.
     gnomeExtensions.streamcontroller-integration # Allow automatic page switching in StreamController by adding a dbus interface to fetch info about the current window.
-    python312Packages.streamcontroller-plugin-tools # StreamController plugin tools.
+    # python312Packages.streamcontroller-plugin-tools # StreamController plugin tools.
     # gnomeExtensions.mullvad-indicator
     gnome-tweaks # Tool to customize advanced GNOME 3 options
     amberol # Small and simple sound and music player
-    gparted # Graphical disk partitioning tool
+    # gparted # Graphical disk partitioning tool
     # evolution # Personal information management application that provides integrated mail, calendaring and address book functionality
     # polari # USE FLATPAK! # IRC chat client designed to integrate with the GNOME desktop
-    # gnomeExtensions.desktop-icons-ng-ding # Adds icons to the desktop. Fork of the original Desktop Icons extension, with several enhancements.
-    fractal # Matrix group messaging app.
-
+    # fractal # Matrix group messaging app.
+    apostrophe # Distraction free Markdown editor for GNU/Linux
+    shotwell # Popular photo organizer for the GNOME desktop
   ];
 
   # Enable GSConnect.

@@ -14,6 +14,9 @@
       ./kde-applications.nix
     ];
 
+  # Disable the installation of the NixOS manual.
+  documentation.nixos.enable = false;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -24,9 +27,6 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Disable the installation of the NixOS manual.
-  documentation.nixos.enable = false;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -99,25 +99,19 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   btop
-  micro
+  rclone
   yt-dlp
   ffmpeg_6
-
-  rclone
-
-  pavucontrol
 
   librewolf
   brave
   tor-browser
   mullvad-browser
 
-  tutanota-desktop
   electron-mail
 
   keepassxc
   yubioath-flutter
-  # cryptomator # USE FLATPAK! # flatpak install flathub org.cryptomator.Cryptomator # Free client-side encryption for your cloud files
   
   bottles
 
@@ -125,14 +119,10 @@
   
   vlc
   mpv
-  handbrake
   
   qpwgraph # Qt graph manager for PipeWire, similar to QjackCtl
   
   vesktop # Alternate client for Discord with Vencord built-in.
-  irssi # Terminal based IRC client
-  
-  pixelorama
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
