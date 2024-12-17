@@ -98,8 +98,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+  wget
   btop
   rclone
   yt-dlp
@@ -110,9 +109,12 @@
   tor-browser
   mullvad-browser
 
-  electron-mail
+  localsend # Open source cross-platform alternative to AirDrop
+  onionshare-gui # Securely and anonymously send and receive files
 
-  keepassxc
+  electron-mail # ElectronMail is an Electron-based unofficial desktop client for ProtonMail
+
+  keepassxc # Offline password manager with many features
   yubioath-flutter
   
   bottles
@@ -124,7 +126,9 @@
   
   qpwgraph # Qt graph manager for PipeWire, similar to QjackCtl
   
-  vesktop # Alternate client for Discord with Vencord built-in.
+  vesktop # Alternate client for Discord with Vencord built-in
+  zapzap # WhatsApp desktop application for Linux
+  session-desktop # Onion routing based messenger
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
