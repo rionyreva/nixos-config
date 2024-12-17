@@ -1,3 +1,5 @@
+# amdgpu.nix
+
 { config, pkgs, ... }:
 
 {

@@ -1,3 +1,5 @@
+# davinci-resolve.nix
+
 { config, lib, pkgs, ... }:
 
 {

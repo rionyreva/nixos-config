@@ -1,3 +1,5 @@
+# gnome.nix
+
 { config, lib, pkgs, ... }:
 
 {
@@ -31,6 +33,8 @@
     # fractal # Matrix group messaging app.
     apostrophe # Distraction free Markdown editor for GNU/Linux
     shotwell # Popular photo organizer for the GNOME desktop
+    tagger # Easy-to-use music tag (metadata) editor
+    brasero # Gnome CD/DVD Burner
   ];
 
   # Enable GSConnect.
