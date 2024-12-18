@@ -1,5 +1,3 @@
-# configuration.nix
-
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
@@ -10,25 +8,13 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./hardware/amdgpu.nix
-      ./desktopEnvironment/gnome.nix
-      ./davinci-resolve.nix
-      ./kde-applications.nix
     ];
-
-  # Aliases.
-  environment.shellAliases = {
-    testi = "cd /home/rionyreva/Downloads";
-  };
-
-  # Disable the installation of the NixOS manual.
-  documentation.nixos.enable = false;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "yourhostnamehere"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -56,6 +42,13 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -63,7 +56,7 @@
   };
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -95,7 +88,7 @@
   };
 
   # Install firefox.
-  # programs.firefox.enable = true;
+  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -103,39 +96,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  wget
-  btop
-  rclone
-  yt-dlp
-  ffmpeg_6
-
-  librewolf
-  brave
-  tor-browser
-  mullvad-browser
-
-  localsend # Open source cross-platform alternative to AirDrop
-  onionshare-gui # Securely and anonymously send and receive files
-
-  onlyoffice-desktopeditors
-
-  electron-mail # ElectronMail is an Electron-based unofficial desktop client for ProtonMail
-
-  keepassxc # Offline password manager with many features
-  yubioath-flutter
-
-  github-desktop
-  
-  vlc
-  mpv
-  
-  duckstation
-  
-  qpwgraph # Qt graph manager for PipeWire, similar to QjackCtl
-  
-  vesktop # Alternate client for Discord with Vencord built-in
-  zapzap # WhatsApp desktop application for Linux
-  session-desktop # Onion routing based messenger
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -149,22 +111,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  
-  # Enable Zram.
-  zramSwap.enable = true;
-
-  # Mullvad VPN
-  services.mullvad-vpn = {
-  	enable = true;
-  	package = pkgs.mullvad-vpn; # Enable GUI application.
-  };
-
-  # Enable PCSC-Lite daemon.
-  services.pcscd.enable = true;
-
-  # Enable Flatpaks.
-  services.flatpak.enable = true;
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

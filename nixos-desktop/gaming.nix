@@ -8,6 +8,7 @@
   space-cadet-pinball
   protonup-qt
   pokemmo-installer
+  bottles
   
   # Lutris - Adding missing dependencies.
   # Libraries
