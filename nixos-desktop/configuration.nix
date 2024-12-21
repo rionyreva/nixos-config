@@ -1,9 +1,5 @@
 # configuration.nix
 
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -11,18 +7,12 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./hardware/amdgpu.nix
-      ./desktopEnvironment/gnome.nix
-      ./davinci-resolve.nix
+      ./kde-plasma.nix
+      ./kdebloat.nix
       ./kde-applications.nix
+      ./pcloud.nix
+
     ];
-
-  # Aliases.
-  environment.shellAliases = {
-    testi = "cd /home/rionyreva/Downloads";
-  };
-
-  # Disable the installation of the NixOS manual.
-  documentation.nixos.enable = false;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -62,9 +52,6 @@
     variant = "";
   };
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -94,48 +81,20 @@
     ];
   };
 
-  # Install firefox.
-  # programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  wget
-  btop
-  rclone
-  yt-dlp
-  ffmpeg_6
-
-  librewolf
-  brave
-  tor-browser
-  mullvad-browser
-
-  localsend # Open source cross-platform alternative to AirDrop
-  onionshare-gui # Securely and anonymously send and receive files
-
-  onlyoffice-desktopeditors
-
-  electron-mail # ElectronMail is an Electron-based unofficial desktop client for ProtonMail
-
-  keepassxc # Offline password manager with many features
-  yubioath-flutter
-
-  github-desktop
-  
-  vlc
-  mpv
-  
-  duckstation
-  
-  qpwgraph # Qt graph manager for PipeWire, similar to QjackCtl
-  
-  vesktop # Alternate client for Discord with Vencord built-in
-  zapzap # WhatsApp desktop application for Linux
-  session-desktop # Onion routing based messenger
+    librewolf
+    brave
+    tor-browser
+    mullvad-browser
+    electron-mail
+    keepassxc
+    yubioath-flutter
+    github-desktop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -150,7 +109,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  
+
   # Enable Zram.
   zramSwap.enable = true;
 
